@@ -1,16 +1,15 @@
 import React from 'react';
-import { TextInputAndroidProps } from 'react-native';
+import { TextInputProps } from 'react-native';
 
-import { Container, MyInput } from './styles';
+import { Container, TextInput } from './styles';
 
-interface InputProps extends TextInputAndroidProps {
-  placeholder: string;
-  secureTextEntry?: boolean;
+interface InputProps extends TextInputProps {
+  name: string;
 }
 
 const Input: React.FC<InputProps> = ({ ...rest }) => (
   <Container>
-    <MyInput placeholderTextColor="#A8A7A8" {...rest} />
+    <TextInput {...rest} />
   </Container>
 );
 

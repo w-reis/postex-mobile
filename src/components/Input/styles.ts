@@ -8,7 +8,8 @@ export const Container = styled.View`
   margin: 10px 0;
 `;
 
-export const MyInput = styled.TextInput`
+export const TextInput = styled.TextInput`
+  flex: 1;
   font-family: 'Roboto-Medium';
   font-size: 20px;
   color: #2c2929;
