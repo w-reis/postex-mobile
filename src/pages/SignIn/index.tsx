@@ -8,8 +8,12 @@ import { Container, Title } from './styles';
 const SignIn: React.FC = () => (
   <Container>
     <Title>Entrar</Title>
-    <Input placeholder="Endereço de e-mail" keyboardType="email-address" />
-    <Input placeholder="Sua senha" secureTextEntry />
+    <Input
+      name="email"
+      placeholder="Endereço de e-mail"
+      keyboardType="email-address"
+    />
+    <Input name="password" placeholder="Sua senha" secureTextEntry />
     <Button style={{ marginTop: 47 }}>Entrar</Button>
   </Container>
 );
