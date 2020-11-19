@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
   flex: 1;
-  padding: 0 30px;
+  padding: 57px 30px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.Text`
-  justify-content: center;
-  text-align: center;
   color: #2c2929;
   font-family: 'Roboto-Bold';
   font-size: 36px;
