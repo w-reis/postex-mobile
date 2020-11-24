@@ -10,7 +10,7 @@ const App: React.FC = () => (
   <>
     <StatusBar barStyle="dark-content" backgroundColor="#FAFBFD" />
     <View style={{ flex: 1, backgroundColor: '#FAFBFD' }}>
-      <RegisterAddress />
+      <SignUp />
     </View>
   </>
 );

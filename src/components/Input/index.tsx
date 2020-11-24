@@ -18,10 +18,17 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   const inputElementRef = useRef<any>(null);
 
   const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
 
   const handleInputFocus = useCallback(() => {
-    setIsFocused(!isFocused);
-  }, [isFocused]);
+    setIsFocused(true);
+  }, []);
+
+  const handleInputBlur = useCallback(() => {
+    setIsFocused(false);
+
+    setIsFilled(!!inputValueRef.current.value);
+  }, []);
 
   useEffect(() => {
     registerField<string>({
@@ -40,12 +47,12 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} isErrored={!!error} isFilled={isFilled}>
       <TextInput
         {...rest}
         placeholderTextColor={isFocused ? '#0162ab' : '#99999c'}
         onFocus={handleInputFocus}
-        onBlur={handleInputFocus}
+        onBlur={handleInputBlur}
         ref={inputElementRef}
         defaultValue={defaultValue}
         onChangeText={(value) => {
