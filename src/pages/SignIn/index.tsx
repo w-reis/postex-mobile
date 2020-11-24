@@ -29,11 +29,21 @@ const SignIn: React.FC = () => {
           <Title>Entrar</Title>
           <Form ref={formRef} onSubmit={handleSignIn} style={{ width: '100%' }}>
             <Input
+              autoCorrect={false}
+              autoCapitalize="none"
               name="email"
               placeholder="Endereço de e-mail"
               keyboardType="email-address"
             />
-            <Input name="password" placeholder="Sua senha" secureTextEntry />
+            <Input
+              name="password"
+              placeholder="Sua senha"
+              secureTextEntry
+              returnKeyType="send"
+              onSubmitEditing={() => {
+                formRef.current?.submitForm();
+              }}
+            />
             <Button
               style={{ marginTop: 47 }}
               onPress={() => {

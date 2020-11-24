@@ -33,13 +33,53 @@ const RegisterAddress: React.FC = () => {
         <Container>
           <Title>Seu Endereço</Title>
           <Form ref={formRef} onSubmit={handleSignUp} style={{ width: '100%' }}>
-            <Input name="cep" placeholder="CEP" keyboardType="numeric" />
-            <Input name="address" placeholder="Logradouro" />
-            <Input name="number" placeholder="Número" keyboardType="numeric" />
-            <Input name="complement" placeholder="Complemento" />
-            <Input name="neighborhood" placeholder="Bairro" />
-            <Input name="city" placeholder="Cidade" />
-            <Input name="uf" placeholder="UF" />
+            <Input
+              name="cep"
+              placeholder="CEP"
+              keyboardType="numeric"
+              autoCompleteType="postal-code"
+              maxLength={8}
+            />
+            <Input
+              name="address"
+              placeholder="Logradouro"
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+            <Input
+              name="number"
+              placeholder="Número"
+              keyboardType="numeric"
+              maxLength={5}
+            />
+            <Input
+              name="complement"
+              placeholder="Complemento"
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+            <Input
+              name="neighborhood"
+              placeholder="Bairro"
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+            <Input
+              name="city"
+              placeholder="Cidade"
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+            <Input
+              name="uf"
+              placeholder="UF"
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="send"
+              onSubmitEditing={() => {
+                formRef.current?.submitForm();
+              }}
+            />
             <Button
               style={{ marginTop: 47 }}
               onPress={() => {

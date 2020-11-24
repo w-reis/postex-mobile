@@ -35,11 +35,18 @@ const SignUp: React.FC = () => {
             style={{ width: '100%' }}
           >
             <Input
+              autoCorrect={false}
+              autoCapitalize="none"
               name="email"
+              autoCompleteType="email"
               placeholder="Endereço de e-mail"
               keyboardType="email-address"
             />
-            <Input name="name" placeholder="Seu nome completo" />
+            <Input
+              name="name"
+              placeholder="Seu nome completo"
+              autoCapitalize="words"
+            />
             <Input
               name="password"
               placeholder="Digite uma senha"
@@ -49,6 +56,10 @@ const SignUp: React.FC = () => {
               name="confirmpassword"
               placeholder="Repita a senha"
               secureTextEntry
+              returnKeyType="next"
+              onSubmitEditing={() => {
+                formRef.current?.submitForm();
+              }}
             />
             <Button
               style={{ marginTop: 47 }}
