@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { TextInputProps } from 'react-native';
 import { useField } from '@unform/core';
 
@@ -17,6 +17,12 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
   const inputElementRef = useRef<any>(null);
 
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleInputFocus = useCallback(() => {
+    setIsFocused(!isFocused);
+  }, [isFocused]);
+
   useEffect(() => {
     registerField<string>({
       name: fieldName,
@@ -34,9 +40,12 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container>
+    <Container isFocused={isFocused}>
       <TextInput
         {...rest}
+        placeholderTextColor={isFocused ? '#0162ab' : '#99999c'}
+        onFocus={handleInputFocus}
+        onBlur={handleInputFocus}
         ref={inputElementRef}
         defaultValue={defaultValue}
         onChangeText={(value) => {
