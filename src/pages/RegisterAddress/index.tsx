@@ -52,9 +52,6 @@ const RegisterAddress: React.FC = () => {
           abortEarly: false,
         });
 
-        console.log('aqui chegou!');
-        console.log({ ...data, ...personalinfo });
-
         !data.complement && delete data.complement;
 
         await api.post('/recipients', { ...data, ...personalinfo });
@@ -73,8 +70,6 @@ const RegisterAddress: React.FC = () => {
 
           return;
         }
-
-        console.log(err);
 
         Alert.alert(
           'Ocorreu um erro insperado',
