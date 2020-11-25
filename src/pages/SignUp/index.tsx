@@ -1,6 +1,8 @@
 import React, { useCallback, useRef } from 'react';
 import { KeyboardAvoidingView, ScrollView, Alert } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import * as Yup from 'yup';
 
 import { Form } from '@unform/mobile';
@@ -22,6 +24,8 @@ interface FormProps {
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const navigation = useNavigation();
+
   const handleNextScreen = useCallback(async (data: FormProps) => {
     try {
       formRef.current?.setErrors({});
@@ -36,10 +40,7 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
 
-      // await signIn({
-      //  email: data.user,
-      //  password: data.password,
-      // });
+      navigation.navigate('RegisterAddress', { personalinfo: data });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
