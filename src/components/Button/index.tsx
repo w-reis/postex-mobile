@@ -1,9 +1,9 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
+import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import { Container, ButtonText } from './styles';
 
-interface ButtonProps extends TouchableOpacityProps {
+interface ButtonProps extends RectButtonProperties {
   children: string;
   isWhite?: boolean;
 }

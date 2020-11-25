@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 interface ButtonProps {
   isWhite?: boolean;
 }
 
-export const Container = styled.TouchableOpacity<ButtonProps>`
+export const Container = styled(RectButton)<ButtonProps>`
   width: 100%;
   height: 60px;
   background: #0748b4;
