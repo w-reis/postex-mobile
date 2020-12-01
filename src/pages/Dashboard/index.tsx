@@ -140,13 +140,15 @@ const Dashboard: React.FC = () => {
                 </>
               ) : (
                 <>
+                  <Username>{recipient.name.split(' ')[0]}</Username>
                   <Subtitle>
                     Você ainda não recebeu nenhuma correspondência
                   </Subtitle>
                   <Image
                     source={cellphone}
-                    style={{ marginVertical: 30 }}
-                    width={250}
+                    style={{ marginVertical: 30, width: 200, height: 189.07 }}
+                    width={200}
+                    height={189.07}
                   />
                   <Subtitle>
                     Fique de olho, elas aparecerão aqui para você ficar sabendo
