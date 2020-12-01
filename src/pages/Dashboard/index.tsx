@@ -9,15 +9,12 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-import { RectButton } from 'react-native-gesture-handler';
-
-import { DrawerActions, useNavigation } from '@react-navigation/native';
-
 import { useAuth } from '../../hooks/auth';
 
 import api from '../../services/api';
 
-import menu from '../../assets/menu.png';
+import Menu from '../../components/Menu';
+
 import letter from '../../assets/letter.png';
 import check from '../../assets/check.png';
 import attention from '../../assets/attention.png';
@@ -47,7 +44,6 @@ interface CorrespondencesInfoProps {
 
 const Dashboard: React.FC = () => {
   const { token, recipient } = useAuth();
-  const navigation = useNavigation();
 
   const [correspondencesInfo, setCorrespondencesInfo] = useState<
     CorrespondencesInfoProps
@@ -90,22 +86,12 @@ const Dashboard: React.FC = () => {
     }
   }, [recipient.id, token]);
 
-  const openDrawer = useCallback(() => {
-    navigation.dispatch(DrawerActions.toggleDrawer());
-  }, [navigation]);
-
   useEffect(() => {
     loadCorrespondencesInfo();
   }, [loadCorrespondencesInfo]);
 
   return (
     <>
-      <RectButton
-        onPress={openDrawer}
-        style={{ marginTop: 20, marginLeft: 20, width: 32 }}
-      >
-        <Image source={menu} width={32} />
-      </RectButton>
       {loading ? (
         <View
           style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -114,6 +100,7 @@ const Dashboard: React.FC = () => {
         </View>
       ) : (
         <KeyboardAvoidingView style={{ flex: 1 }} enabled>
+          <Menu />
           <ScrollView
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
