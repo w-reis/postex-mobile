@@ -33,6 +33,7 @@ interface SignInCredentials {
 }
 
 interface AuthContextData {
+  token: string;
   recipient: Recipient;
   loading: boolean;
   signIn(credentials: SignInCredentials): Promise<void>;
@@ -91,6 +92,7 @@ const AuthProvider: React.FC = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
+        token: data.token,
         recipient: data.recipient,
         loading,
         signIn,
