@@ -43,7 +43,7 @@ interface CorrespondencesInfoProps {
 }
 
 const Dashboard: React.FC = () => {
-  const { token, recipient } = useAuth();
+  const { token, recipient, signOut } = useAuth();
 
   const [correspondencesInfo, setCorrespondencesInfo] = useState<
     CorrespondencesInfoProps
@@ -81,10 +81,12 @@ const Dashboard: React.FC = () => {
         'Sua sessão expirou!',
         'Faça login novamente para utilizar o Postex.',
       );
+
+      signOut();
     } finally {
       setLoading(false);
     }
-  }, [recipient.id, token]);
+  }, [recipient.id, token, signOut]);
 
   useEffect(() => {
     loadCorrespondencesInfo();
