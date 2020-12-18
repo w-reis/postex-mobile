@@ -6,9 +6,9 @@
 </p>
 
 <div align="center">
-  <a href="#sobre-o-projeto">Sobre o projeto</a> •
-  <a href="#tecnologias-utilizadas">Tecnologias utilizadas</a> •
-  <a href="#como-executar">Como executar</a>
+  <a href="#information_source-sobre-o-projeto">Sobre o projeto</a> •
+  <a href="#computer-tecnologias-utilizadas">Tecnologias utilizadas</a> •
+  <a href="#rocket-como-executar">Como executar</a>
 </div>
 
 <br>
