@@ -49,7 +49,6 @@ Este aplicativo faz parte de um projeto cuja finalidade é permitir que pessoas 
 
   Para clonar e executar este aplicativo, você precisará do [Git](https://git-scm.com), [Node.js](https://nodejs.org) + [Yarn](https://yarnpkg.com) instalado no seu computador. Também é ideal possuir um editor para trabalhar com o código como [Visual Studio Code](https://code.visualstudio.com/).
 <p>Para visualizar o aplicativo você irá precisar de um celular ou um emulador de android/ios.</p>
-<br />
 
 ### Baixando o projeto 
 
