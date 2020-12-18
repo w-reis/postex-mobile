@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src=".github/logo.png" width="175">
+    <img src=".github/logo.png" width="175" alt="logo">
 </h1>
 <p align="center">
   Aplicativo de Consulta de Correspondências
@@ -17,13 +17,13 @@
   <img alt="Demo Postex" src=".github/demo.gif">
 </p>
 
-# Sobre o projeto
+# :information_source: Sobre o projeto
 
-Este aplicativo faz parte de um projeto cuja finalidade é permitir que pessoas que não possuem entrega domiciliar de correspondências fique sabendo quando há correspondências para serem retiradas nas agências de serviço postal, para não "perder a viagem" 😁. As correspondências são cadastrados em uma [Aplicação Web]() que assim como o aplicativo, consome uma [API]().
+Este aplicativo faz parte de um projeto cuja finalidade é permitir que pessoas que não possuem entrega domiciliar de correspondências fique sabendo quando há correspondências para serem retiradas nas agências de serviço postal, para não "perder a viagem" 😁. As correspondências são cadastrados em uma [Aplicação Web](https://github.com/w-reis/postex-front-end) que, assim como o aplicativo, consome uma [API](https://github.com/w-reis/postex-api).
 
 <br>
 
-# Tecnologias utilizadas
+# :computer: Tecnologias utilizadas
 
 ### Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
@@ -43,14 +43,14 @@ Este aplicativo faz parte de um projeto cuja finalidade é permitir que pessoas 
 
 <br>
 
-# Como executar
+# :rocket: Como executar
 
-### Executando o projeto no dispositivo mobile
+### :iphone: Executando o projeto no dispositivo mobile
 
   Para clonar e executar este aplicativo, você precisará do [Git](https://git-scm.com), [Node.js](https://nodejs.org) + [Yarn](https://yarnpkg.com) instalado no seu computador. Também é ideal possuir um editor para trabalhar com o código como [Visual Studio Code](https://code.visualstudio.com/).
 <p>Para visualizar o aplicativo você irá precisar de um celular ou um emulador de android/ios.</p>
 
-### Baixando o projeto 
+### :arrow_down: Baixando o projeto 
 
 ```bash
 # Clone o repositório na sua máquina
